@@ -13,31 +13,15 @@ import org.bukkit.util.Vector;
 
 import eu.hangar.CommandInfo;
 import eu.hangar.GameCommand;
+import net.minecraft.server.v1_9_R2.NBTTagCompound;
 
 @CommandInfo(description = "SH", usage = "<SH>", aliases = { "shelp", "sh" }, op=true)
 public class SH extends GameCommand{
 
-	private void spawnEntity(Location location, String name, Class someEntity) {
-		 LivingEntity entity = (LivingEntity) location.getWorld().spawnEntity(location, EntityType.VILLAGER);
-        entity.setCustomName(name);
-        entity.setCustomNameVisible(true);
-      //  entity.setGravity(false);
-        entity.setInvulnerable(true);
-    //    ((Object) entity).setSilent(true);
-        entity.setVelocity(new Vector(0, 0, 0));
-        entity.setAI(false);
-        entity.setCollidable(false);
-
-
-        if (entity instanceof Ageable) {
-            Ageable ageable = (Ageable) entity;
-
-            ageable.setAgeLock(true);
-        }
 
 
         
-    }
+    
 	@Override
 	public void onCommand(Player p, String[] args) {
         Location location = p.getLocation();
@@ -45,13 +29,10 @@ public class SH extends GameCommand{
         LivingEntity entity = (LivingEntity) location.getWorld().spawnEntity(location, EntityType.VILLAGER);
         entity.setCustomName(ChatColor.GREEN + "HELP");
         entity.setCustomNameVisible(true);
-       // entity.setGravity(false);
-        entity.setInvulnerable(true);
-        //entity.setSilent(true);
-        entity.setVelocity(new Vector(0, 0, 0));
-        entity.setAI(false);
-        entity.setCollidable(false);
-        p.setCollidable(false);
+        NBTTagCompound tag = new NBTTagCompound();
+        ((NBTTagCompound) entity).c();
+        tag.setInt("NoAI", 1);
+        ((NBTTagCompound) entity).a(tag);
 			return;
 		}
 	
