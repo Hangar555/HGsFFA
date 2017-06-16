@@ -40,20 +40,20 @@ public class Scoreboards implements Listener {
 	     String blank4= "    ";
 	     String blank5= "      ";
 	     String blank6= "       ";
-	     String onenine= ChatColor.GREEN + ""+ChatColor.BOLD + "Playing on 1.9 PVP";
-	     String FFA= ChatColor.RESET + ""+ChatColor.BOLD + "SERVER: " + ChatColor.RESET+""+ChatColor.YELLOW + " FFA";
-	     String t1= ChatColor.RESET + ""+ChatColor.BOLD + "TEAMING:";
-	     String t2= ChatColor.RED + ""+ChatColor.BOLD + "NOT ALLOWED";
-	     String ip = ChatColor.YELLOW +""+ChatColor.BOLD + "Placeholder";
+	     String onenine= ChatColor.GREEN +  "PvP Style: 1.9 ";
+	     String FFA= ChatColor.RESET + ""+ "SERVER: " + ChatColor.RESET+""+ChatColor.YELLOW + " FFA";
+	     String t1= ChatColor.RESET + "" + "TEAMING:";
+	     String t2= ChatColor.RED + ""+"NOT ALLOWED";
+	     String ip = ChatColor.YELLOW  + "Free For All";
 
 	     Objective objective = pb.registerNewObjective("dummy", "title");
-	     objective.setDisplayName(ChatColor.YELLOW+""+ChatColor.BOLD +  "Placeholder");
+	     objective.setDisplayName(ChatColor.YELLOW+  "Free For All v1.0");
 	     
 	     
 	     
 	     Score blanktd6 = objective.getScore(blank6);
 	     blanktd6.setScore(10);
-	     Score FFAT = objective.getScore(FFA);
+	    Score FFAT = objective.getScore(FFA);
 		    FFAT.setScore(9);
 
 	     Score blanktd = objective.getScore(blank4);
