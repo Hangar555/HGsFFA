@@ -30,22 +30,22 @@ public class KillListener implements Listener{
         public void onPlayerDeath(PlayerDeathEvent event) {
         	
         	Random random = new Random();
-        	int Chance = random.nextInt(200);
+        	int Chance = random.nextInt(100);
         	 
         	if(event.getEntity().getPlayer().getKiller() != null){ 
         	event.setDeathMessage(ChatColor.GOLD + ""+ event.getEntity().getPlayer().getKiller().getName() + " killed " + event.getEntity().getPlayer().getName() + "!");
-        	event.getEntity().getKiller().sendMessage(ChatColor.GREEN + "+1 Kill!");
+        	event.getEntity().getKiller().sendMessage(ChatColor.GREEN + "Killed " + event.getEntity().getKiller());
         	VillagerMenu.KitPlayer.remove(event.getEntity().getPlayer());
       
         	
         	        
         	event.getDrops().clear();
-        	if(Chance >= 300) {
+        	if(Chance > 55) {
         	
         	 
         	event.getEntity().getPlayer().getKiller().getInventory().addItem(new ItemStack(Material.EMERALD));
         	} else {
-        	    event.getEntity().getPlayer().sendMessage(ChatColor.RED+"Bad luck!");
+        	   return;
         	}
         	 
         	 
@@ -62,6 +62,9 @@ public class KillListener implements Listener{
             	
         }
         }
+
+
+        
 
 
         
