@@ -10,18 +10,18 @@ import org.bukkit.event.block.BlockBreakEvent;
 public class WorldProtection implements Listener {
 	
 
-	/*
+	
 	
 	@EventHandler
 	public void blockBreak(BlockBreakEvent event) {
-		if(!event.getPlayer().hasPermission("fff.hatrex.build")){
+		if(!event.getPlayer().hasPermission("ffa.admin")){
 
 			event.setCancelled(true);
 
 		}
 		event.setCancelled(false);
 		}
-		*/
+		
 		}
 	
 

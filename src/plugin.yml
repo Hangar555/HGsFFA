@@ -1,9 +1,9 @@
 name: FFA
-version: 1.0
+version: 1.0.3
 author: HangarGeek
 main: eu.hangar.Main
 description: FFA
 commands:
       FFA:
-        usage: /<command> <args> [optional args]
+        usage: /<FFA> <args> [optional args]
         description: Detailed Help

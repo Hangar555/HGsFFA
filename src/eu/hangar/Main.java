@@ -8,7 +8,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.World;
-import org.bukkit.craftbukkit.v1_9_R2.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -33,10 +33,11 @@ import eu.hangar.listeners.WorldProtection;
 
 import eu.hangar.noteams.TeamWarn;
 import net.md_5.bungee.api.ChatColor;
-import net.minecraft.server.v1_9_R2.IChatBaseComponent.ChatSerializer;
-import net.minecraft.server.v1_9_R2.PacketPlayOutTitle;
-import net.minecraft.server.v1_9_R2.PacketPlayOutTitle.EnumTitleAction;
-import net.minecraft.server.v1_9_R2.PlayerConnection;
+import net.minecraft.server.v1_12_R1.IChatBaseComponent.ChatSerializer;
+import net.minecraft.server.v1_12_R1.PacketPlayOutTitle;
+import net.minecraft.server.v1_12_R1.PacketPlayOutTitle.EnumTitleAction;
+import net.minecraft.server.v1_12_R1.PlayerConnection;
+
 
 
 
@@ -80,6 +81,8 @@ menu1 = new SpawnMenu(this);
 		pm.registerEvents(new NoHunger(), this);
 		pm.registerEvents(new WeatherManager(), this);
 		   pl = this;
+		   instance = pl;
+		  
 		   SettingsManager.instance.setup(pl);
 
 		//pm.registerEvents(new VillagerMenu(), this);
@@ -293,8 +296,7 @@ menu1 = new SpawnMenu(this);
                  	 connection.sendPacket(Hf3);
                //  	 p.sendMessage(ChatColor.GOLD +""+ChatColor.BOLD+ "Kill Players!");
                 }
-            }, 35); //7seconds
-           
+            }, 35); //7seconds           
 	        Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(pl, new Runnable() {
                 @Override
                 public void run() {

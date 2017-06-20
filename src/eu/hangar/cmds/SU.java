@@ -9,7 +9,7 @@ import org.bukkit.util.Vector;
 
 import eu.hangar.CommandInfo;
 import eu.hangar.GameCommand;
-import net.minecraft.server.v1_9_R2.NBTTagCompound;
+import net.minecraft.server.v1_12_R1.NBTTagCompound;
 
 @CommandInfo(description = "SU", usage = "<SU>", aliases = { "SUupgrader", "su" }, op=true)
 public class SU extends GameCommand{
@@ -21,10 +21,7 @@ public class SU extends GameCommand{
         LivingEntity entity = (LivingEntity) location.getWorld().spawnEntity(location, EntityType.VILLAGER);
         entity.setCustomName(ChatColor.GOLD + "KIT UPGRADER");
         entity.setCustomNameVisible(true);
-        NBTTagCompound tag = new NBTTagCompound();
-        ((NBTTagCompound) entity).c();
-        tag.setInt("NoAI", 1);
-        ((NBTTagCompound) entity).a(tag);
+        entity.setAI(false);
 			return;
 		}
 	

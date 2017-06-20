@@ -9,7 +9,7 @@ import org.bukkit.util.Vector;
 
 import eu.hangar.CommandInfo;
 import eu.hangar.GameCommand;
-import net.minecraft.server.v1_9_R2.NBTTagCompound;
+import net.minecraft.server.v1_12_R1.NBTTagCompound;
 
 @CommandInfo(description = "sdh", usage = "<sdh>", aliases = { "sdhelp", "sdh" }, op=true)
 public class SDH extends GameCommand{
@@ -20,10 +20,7 @@ public class SDH extends GameCommand{
  //       spawnEntity(location, ChatColor.GREEN+ "HELP", PigZombie.class);
         LivingEntity entity = (LivingEntity) location.getWorld().spawnEntity(location, EntityType.VILLAGER);
         entity.setCustomName(ChatColor.GREEN + "DUELS HELP");
-        NBTTagCompound tag = new NBTTagCompound();
-        ((NBTTagCompound) entity).c();
-        tag.setInt("NoAI", 1);
-        ((NBTTagCompound) entity).a(tag);
+        entity.setAI(false);
 			return;
 		}
 	

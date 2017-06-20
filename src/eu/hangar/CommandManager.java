@@ -8,7 +8,7 @@ import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 
 import eu.hangar.cmds.AddSpawn;
-import eu.hangar.cmds.AddSubSpawn;
+
 import eu.hangar.cmds.ForceKits;
 import eu.hangar.cmds.Kit;
 import eu.hangar.cmds.SD;
@@ -43,7 +43,7 @@ public class CommandManager implements CommandExecutor{
 		cmds.add(new fr());
 		cmds.add(new sps());
 		cmds.add(new WarnTeaming());
-		cmds.add(new AddSubSpawn());
+
 
 
 
@@ -69,7 +69,7 @@ public class CommandManager implements CommandExecutor{
 
 					p.sendMessage(ChatColor.GOLD + "/ffa"+ ChatColor.GREEN+" Usage: /ffa " + info.usage() +ChatColor.RESET +" - "+ ChatColor.GREEN + "Command Info: " + info.description() );
 					}
-				}else{p.sendMessage(ChatColor.GREEN + "/ffa "+ChatColor.GOLD+" spectate " +ChatColor.GREEN+"[Spectate your friends! (Only for [IDEK] and higher)]");
+				}else{p.sendMessage(ChatColor.GREEN + "/ffa "+ChatColor.GOLD+" spectate " +ChatColor.GREEN+"[Spectate your friends! (Only for [" +Main.getInstance().getConfig().getString("Rank")+ "]  and higher)]");
 	
 
 				}return true;

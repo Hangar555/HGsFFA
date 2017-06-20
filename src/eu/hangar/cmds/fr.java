@@ -40,9 +40,3 @@ public class fr extends GameCommand{
 }
 }
 }
-	 
-}else{
-	p.sendMessage(ChatColor.DARK_RED + "[ERROR]" + ChatColor.RED + " Not enough permissions!");
-}
-}
-}

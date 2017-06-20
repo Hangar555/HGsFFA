@@ -16,7 +16,7 @@ public class WarnTeaming extends GameCommand {
 @Override
 	public void onCommand(Player p, String[] args) {
 	 Player t = Bukkit.getPlayer(args[0]);
-	if(p.hasPermission("hatrex.ffa.warn")){
+	if(p.hasPermission("ffa.warn")){
 		if(args.length==1){
 		 if(this.Warned.containsKey(t.getName())){
 			 p.sendMessage(ChatColor.GREEN + "Player warned & kicked!");

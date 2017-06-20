@@ -15,10 +15,13 @@ import org.bukkit.inventory.ItemStack;
 
 public class Utils {
 
+	static int x = Main.getInstance().getConfig().getInt("x");
+	static int y = Main.getInstance().getConfig().getInt("y");
+	static int z = Main.getInstance().getConfig().getInt("z");
 		   public static World world = Bukkit.getWorld("world");
-		   public static Location spawn =  new Location(Bukkit.getWorld("world"),7,66,-17);
+		   public static Location spawn =  new Location(Bukkit.getWorld("world"),x,y,z);
 		   
-		   
+
 		   
 		   public static List<String> kits = new ArrayList<String>();
 
